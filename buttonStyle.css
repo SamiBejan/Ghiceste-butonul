@@ -1,0 +1,111 @@
+body {
+    background-image: url("neon.jpg");
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+    margin-top: 6%;
+    color : rgb(236, 236, 0);
+    text-shadow: -3px 2px rgb(30, 36, 3);
+}
+
+P {
+    position: relative;
+    left: 15%;
+    margin-top: 5%;
+    color: greenyellow;
+    text-shadow: -3px 2px rgb(30, 36, 3);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    
+}
+
+input {
+    position: relative;
+    color:black;
+    background-color: rgb(236, 236, 0);
+    left: 17%;
+    margin-top: 1%;
+}
+
+button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+button.button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+button.generate {
+    position: relative;
+    left: 18%;
+    background-color: greenyellow;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    border-radius: 15px;
+}
+
+button.button {
+    position: relative;
+    left: 38%;
+    top: 25%;
+    background-color: crimson;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+button.button:hover {
+    background-color: red;
+}
+
+button.generate:hover {
+    background-color: rgb(47, 243, 57);
+}
+
+#first_output {
+    position: relative;
+    left: 42%;
+    top: 170px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 300px;
+}
+
+#second_output {
+    position: relative;
+    left: 15%;
+    margin-top: 1px;
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 310px;
+}
+
+button.startAgain {
+    color: black; 
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    left: 45%;
+    top:200px;
+    background-color: rgb(89, 241, 89);
+}
