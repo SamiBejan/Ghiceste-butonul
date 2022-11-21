@@ -4,107 +4,18 @@
     <meta charset="utf-8">
     <title>Ghicește butonul</title>
     <link rel = "stylesheet" href="buttonStyle.css"/>
+    <script src ="GuessButton.js" defer></script>
   </head>
   <body>
     <h1>GHICEȘTE BUTONUL CÂȘTIGĂTOR</h1>
-    
     <p>AICI POȚI GENERA NUMĂRUL DORIT DE BUTOANE</p>
     <form>
       <input type = "number" id = "number" class = "buttonNr"/>
       <button type = "button" class = "generate" > Genereaza </button>
+      <div id = "second_output" class = "output"></div>
     </form>
-    <pre id = "first_output" class = "output"> </pre>
-    <pre id = "second_output" class = "output"></pre>
-    <button type= "button" class = "startAgain">Începe din nou</button>
-
-    <script>
-      let buttonCnt = 3;
-      let winnerId = WinnerButton(buttonCnt);
-      let btn = new Array(buttonCnt);
-
-      const firstOutput = document.querySelector("#first_output");
-      const secondOutput = document.querySelector("#second_output");
-      const startAgain = document.querySelector(".startAgain");
-      const generateBtn = document.querySelector(".generate");
-      const input = document.querySelector(".buttonNr");
-      
-      createButtons(buttonCnt);
-      startAgain.disabled = true;
-
-      function createButtons(buttonCnt) { 
-        for (let i = 1; i <= buttonCnt; ++i) {
-          btn[i] = document.createElement("button");
-          document.body.append(btn[i]);
-          btn[i].setAttribute("id", Number(i));
-          btn[i].setAttribute("class", "button");
-          btn[i].addEventListener('click', handleClick);
-        }
-      }
-
-      function WinnerButton(buttonCnt) {
-        let Winner = Math.ceil(Math.random() * buttonCnt);
-          return Winner;
-      }
-      
-      function handleClick(e) {
-        clearOutput(secondOutput);
-        if (Number(e.target.id) === winnerId) {
-          firstOutput.textContent = "                    FELICITĂRI! \n AI GĂSIT BUTONUL CÂȘTIGĂTOR.";
-          firstOutput.style.backgroundColor = 'rgb(236, 236, 0)';
-           setGameOver();
-        } else {
-          firstOutput.textContent = "                    MAI ÎNCEARCĂ";
-          firstOutput.style.backgroundColor = 'rgb(255, 125, 0)';
-        }
-      }
-
-      function setGameOver() {
-        for (let i = 1; i <= buttonCnt; ++i) {
-          btn[i].disabled = true;
-        }
-        startAgain.disabled = false;
-        startAgain.addEventListener('click', resetGame);
-      }
-
-      function clearOutput(output) {
-          output.textContent = " ";
-          output.style.backgroundColor = "transparent";
-      }
-
-      function resetGame() {
-        for (let i = 1; i <= buttonCnt; ++i) {
-            btn[i].disabled = false;
-        }
-        startAgain.disabled = true;
-        clearOutput(firstOutput);
-        winnerId = WinnerButton(buttonCnt);
-      }
-      
-      
-
-      function generateButtons() {
-        clearOutput(firstOutput);
-        if (Number(input.value) > 0) {
-          deleteButtons();
-          buttonCnt = Number(input.value);
-          createButtons(buttonCnt);
-          winnerId = WinnerButton(buttonCnt);
-          clearOutput(secondOutput);
-        } else {
-          secondOutput.style.backgroundColor = 'rgb(255, 125, 0)';
-          secondOutput.textContent = " TREBUIE SĂ INTRODUCI O VALOARE POZITIVĂ";
-        }
-      }
-
-      function deleteButtons() {
-        for (let i = 1; i <= buttonCnt; ++i) {
-          btn[i].remove();
-        }
-      }
-
-      generateBtn.addEventListener('click', generateButtons);
-
-    </script>
-
+    <div class = "buttons"></div>
+    <div id = "first_output" class = "output"></div>
+    <div class = "resetBtn"></div>
   </body>
 </html>
