@@ -70,7 +70,6 @@ function generateButtons() {
     }
 }
 
-
 function deleteButtons() {
     for (let i = 1; i <= buttonCnt; ++i) {
         btn[i].remove();
