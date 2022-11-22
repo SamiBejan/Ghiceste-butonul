@@ -6,14 +6,14 @@ const generateBtn = document.querySelector(".generate");
 const input = document.querySelector(".buttonNr");
 
 let buttonCnt = 3;
-let winnerId = WinnerButton(buttonCnt);
+let winnerId = getWinnerButton(buttonCnt);
 let btn = new Array(buttonCnt + 1);
 
 createButtons(buttonCnt);
 
-function WinnerButton(buttonCnt) {
-    let Winner = Math.ceil(Math.random() * buttonCnt);
-    return Winner;
+function getWinnerButton(buttonCnt) {
+    let winner = Math.ceil(Math.random() * buttonCnt);
+    return winner;
 }
 
 function createButtons(buttonCnt) { 
@@ -62,13 +62,14 @@ function generateButtons() {
         deleteButtons();
         buttonCnt = Number(input.value);
         createButtons(buttonCnt);
-        winnerId = WinnerButton(buttonCnt);
+        winnerId = getWinnerButton(buttonCnt);
     } else {
         secondOutput.style.display = "block";
         secondOutput.style.backgroundColor = 'rgb(255, 125, 0)';
         secondOutput.innerText = " TREBUIE SĂ INTRODUCI O VALOARE POZITIVĂ";
     }
 }
+
 
 function deleteButtons() {
     for (let i = 1; i <= buttonCnt; ++i) {
